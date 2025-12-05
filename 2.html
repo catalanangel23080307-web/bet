@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>videos de testimonios e imformacion</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Georgia, serif;
+        background-color: #27B7F5;
+    }
+
+    header {
+        background-color: #27B7F5;
+        color: white;
+        text-align: center;
+        padding: 2%;
+        font-size: 180%;
+        font-weight: bold;
+        letter-spacing: 0.3%;
+    }
+
+    nav {
+        background-color: #27B7F5;
+        padding: 1.5%;
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        font-size: 130%;
+        border-top: 0.5% solid #9c1f1f;
+    }
+
+    nav a {
+        color: #590000;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    #videoContainer {
+        background-color: #d3c5ff;
+        height: 70%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2%;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    video {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border: 2% solid black;
+        border-radius: 2%;
+        box-shadow: 0 0 3% rgba(0,0,0,0.4);
+    }
+
+    footer {
+        background-color: #27B7F5;
+        color: white;
+        text-align: center;
+        padding: 2%;
+        font-size: 140%;
+        font-weight: bold;
+    }
+</style>
+<script>
+function cargarVideo(archivo) {
+    document.getElementById("videoContainer").innerHTML = `
+        <video controls autoplay>
+            <source src="${archivo}" type="video/mp4">
+            Tu navegador no soporta este formato de video.
+        </video>
+    `;
+}
+
+function limpiar() {
+    document.getElementById("videoContainer").innerHTML = `
+        <h2 style="color:#8a1d1d;"></h2>
+    `;
+}
+</script>
+</head>
+<body>
+<header>
+    <marquee>VIDEOS DE TESTIMONIOS E IMFORMACION</marquee>
+</header>
+<div id="videoContainer"></div>
+<nav>
+    <a onclick=cargarVideo('videos/vid.mp4')>Reproducir video 1</a>
+    <a onclick=cargarVideo('videos/vid2.mp4')>Reproducir video 2</a>
+    <a onclick=cargarVideo('videos/vid3.mp4')>Reproducir video 3</a>
+    <a onclick=limpiar()>Limpiar página</a>
+</nav>
+</body>
+</html>

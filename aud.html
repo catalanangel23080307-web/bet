@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>audio</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Georgia, serif;
+        background-color: #FFE3E3;
+    }
+
+    header {
+        background-color: #FFE3E3;
+        color: white;
+        text-align: center;
+        padding: 2%;
+        font-size: 180%;
+        font-weight: bold;
+        letter-spacing: 0.3%;
+    }
+
+    nav {
+        background-color: #FFE3E3;
+        padding: 1%;
+        border-bottom: 0.3% solid #ccc;
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        font-size: 130%;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: #590000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .contenido {
+        padding: 3%;
+        background-color: #FFE3E3;
+        font-size: 180%;
+        color: #8a1d1d;
+        font-weight: bold;
+        min-height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #FFE3E3;
+        color: white;
+        text-align: center;
+        padding: 2%;
+        font-size: 150%;
+        font-weight: bold;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .audio-area {
+        width: 100%;
+    }
+</style>
+<script>
+function mostrarAudio(ruta) {
+    document.getElementById("contenido").innerHTML = `
+        <div class="audio-area">
+            <audio controls autoplay style="width: 90%;">
+                <source src="${ruta}" type="audio/mp3">
+                Tu navegador no soporta audio.
+            </audio>
+        </div>
+    `;
+}
+
+function limpiar() {
+    document.getElementById("contenido").innerHTML = "";
+}
+</script>
+</head>
+<body>
+<header>
+    <marquee behavior="alternate" scrollamount="10">AUDIO DE TESTIMONIO</marquee>
+</header>
+<div id="contenido" class="contenido"></div>
+<nav>
+    <a onclick=mostrarAudio('videos/aud.mp3')>Reproducir audio</a>
+    <a onclick=limpiar()>Limpiar página</a>
+</nav>
+</body>
+</html>
